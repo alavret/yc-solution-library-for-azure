@@ -60,10 +60,10 @@ il_federation_id = <<EOT
   bpxxxxxxxxxxxx
   ---
   Use the following URL for Identitifier (Entity ID) in Azure AD SAML Configuration:
-  https://console.cloud.yandex.ru/federations/bpxxxxxxxxxxxx
+  https://auth.cloudil.co.il/federations/bpxxxxxxxxxxxx
   ---
   Use the following URL for Reply URL in Azure AD SAML Configuration:"
-  https://console.cloud.yandex.ru/federations/bpxxxxxxxxxxxx
+  https://auth.cloudil.co.il/federations/bpxxxxxxxxxxxx
 
 EOT
 ```
@@ -87,7 +87,7 @@ Download the SAML Signing Certificate in Base64 format.
 
 Upload the certificate to complete the setup in CloudIL using the following command (use the Federation ID from the Terraform output above):
 ```
-yc organization-manager federation saml certificate create --federation-id <FEDERATION_ID> --name "az-yc-federation" --certificate-file "az-yc-federation.cer"
+yc organization-manager federation saml certificate create --federation-id <FEDERATION_ID> --name "az-il-federation" --certificate-file "az-il-federation.cer"
 ```
 
 <br/>
