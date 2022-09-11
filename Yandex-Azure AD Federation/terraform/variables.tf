@@ -1,21 +1,21 @@
-variable "yc_auth" {
-  description = "Yandex.Cloud service account key file or token"
-  default     = "key.json" # https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token
+variable "il_auth" {
+  description = "CloudIL service account key file or token"
+  default     = "key.json" 
 }
 
-variable "yc_folder_id" {
-  description = "Yandex.Cloud folder-id"
-  default     = "xxxxxx" # yc config get folder-id
+variable "il_folder_id" {
+  description = "CloudIL folder-id"
+  default     = "xxxxxx" # il config get folder-id
 }
 
-variable "yc_cloud_id" {
-  description = "Yandex.Cloud cloud-id"
-  default     = "xxxxxx" # yc config get cloud-id
+variable "il_cloud_id" {
+  description = "CloudIL cloud-id"
+  default     = "xxxxxx" # il config get cloud-id
 }
 
-variable "yc_org_id" {
-  description = "Yandex.Cloud organization-id"
-  default     = "xxxxxx" # yc organization-manager organization list
+variable "il_org_id" {
+  description = "CloudIL organization-id"
+  default     = "xxxxxx" # il organization-manager organization list
 }
 
 variable "az_tenant_id" {
@@ -25,5 +25,5 @@ variable "az_tenant_id" {
 
 variable "app_name" {
   description = "Application name"
-  default     = "az-yc-federation"
+  default     = "az-il-federation"
 }

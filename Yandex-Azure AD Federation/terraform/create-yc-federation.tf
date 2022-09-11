@@ -1,8 +1,8 @@
-resource "yandex_organizationmanager_saml_federation" "yc_federation" {
+resource "yandex_organizationmanager_saml_federation" "il_federation" {
   depends_on                    = [azuread_application.az-app]
   name                          = var.app_name
-  description                   = "Azure-YC Federation"
-  organization_id               = var.yc_org_id
+  description                   = "Azure-il Federation"
+  organization_id               = var.il_org_id
   sso_url                       = "https://login.microsoftonline.com/${var.az_tenant_id}/saml2"
   issuer                        = "https://sts.windows.net/${var.az_tenant_id}/"
   cookie_max_age                = "12h"
@@ -10,15 +10,15 @@ resource "yandex_organizationmanager_saml_federation" "yc_federation" {
   sso_binding                   = "POST"
 }
 
-output "yc_federation_id" {
+output "il_federation_id" {
   value = <<EOT
-  Yandex.Cloud Federation ID is 
-  ${yandex_organizationmanager_saml_federation.yc_federation.id}
+  CloudIL Federation ID is 
+  ${yandex_organizationmanager_saml_federation.il_federation.id}
   ---
   Use the following URL for Identitifier (Entity ID) in Azure AD SAML Configuration: 
-  https://console.cloud.yandex.ru/federations/${yandex_organizationmanager_saml_federation.yc_federation.id}
+  https://auth.cloudil.co.il/federations/${yandex_organizationmanager_saml_federation.il_federation.id}
   ---
   Use the following URL for Reply URL in Azure AD SAML Configuration:"
-  https://console.cloud.yandex.ru/federations/${yandex_organizationmanager_saml_federation.yc_federation.id}
+  https://auth.cloudil.co.il/federations/${yandex_organizationmanager_saml_federation.il_federation.id}
   EOT
 }
