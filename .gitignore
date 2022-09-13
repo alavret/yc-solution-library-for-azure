@@ -12,6 +12,7 @@ key.json
 # Other
 *.0_x5
 .DS_Store
+.bkp
 
 # Service account key files
 key.json
