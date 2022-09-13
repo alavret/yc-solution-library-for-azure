@@ -25,22 +25,22 @@ resource "azurerm_virtual_network_gateway" "azure-vpn-gw" {
 }
 
 #---------------------------
-# Local Network Gateway which represents remote endpoint at Yandex
+# Local Network Gateway which represents remote endpoint at CloudIL
 #---------------------------
 resource "azurerm_local_network_gateway" "localgw" {
-  name                = "${var.azure_vnet_name}-yandex-local-gw"
+  name                = "${var.azure_vnet_name}-cloudil-local-gw"
   resource_group_name = var.rgname
   location            = var.location
   gateway_address     = data.yandex_vpc_address.vpn_address.external_ipv4_address.0.address
-  address_space       = split(",", var.yandex_subnet_range)
+  address_space       = split(",", var.cloudil_subnet_range)
   tags = var.labels
 }
 
 #---------------------------------------
-# Virtual Network Gateway Connection which binds together vpn gateway in Azure and local gateway in Yandex
+# Virtual Network Gateway Connection which binds together vpn gateway in Azure and local gateway in CloudIL
 #---------------------------------------
 resource "azurerm_virtual_network_gateway_connection" "az-hub-onprem" {
-  name                = "${var.azure_vnet_name}-yandex-hub"
+  name                = "${var.azure_vnet_name}-cloudil-hub"
   resource_group_name = var.rgname
   location            = var.location
   tags = var.labels

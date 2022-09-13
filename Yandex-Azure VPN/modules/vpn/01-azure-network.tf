@@ -42,7 +42,7 @@ resource "azurerm_subnet" "azure-vpn-protected" {
 }
 
 #-------------------------------
-# route table and route towards yandex subnet
+# route table and route towards cloudil subnet
 #-------------------------------
 resource "azurerm_route_table" "azure-rt" {
   name                = "${var.azure_vnet_name}-azure-rt"
@@ -54,6 +54,6 @@ resource "azurerm_route" "azure-route" {
   name                = "${var.azure_vnet_name}-azure-route"
   resource_group_name = var.rgname
   route_table_name    = azurerm_route_table.azure-rt.name
-  address_prefix      = var.yandex_subnet_range
+  address_prefix      = var.cloudil_subnet_range
   next_hop_type       = "VirtualNetworkGateway"
 }

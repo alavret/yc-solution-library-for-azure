@@ -19,7 +19,7 @@ resource "yandex_kms_symmetric_key" "vpn-key" {
     lifecycle {
     prevent_destroy = false
   }
-  name              = "az-yc-vpn-key"
+  name              = "az-il-vpn-key"
   description       = "encryption key for psk string"
   default_algorithm = "AES_256"
   rotation_period   = "8760h" // equal to 1 year

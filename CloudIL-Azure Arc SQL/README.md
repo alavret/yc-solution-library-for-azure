@@ -1,18 +1,18 @@
 # Azure Arc-enabled SQL Server
 
-This guide provides easy-to-use scripts for connecting [Yandex.Cloud](https://cloud.yandex.com/en/) SQL server installed on a VM to [Microsoft Azure Arc](https://azure.microsoft.com/services/azure-arc/).
+This guide provides easy-to-use scripts for connecting [CloudIL](https://cloudil.co.il/) SQL server installed on a VM to [Microsoft Azure Arc](https://azure.microsoft.com/services/azure-arc/).
 
 
 <br/>
 
 ## About
 
-This repository contains an example that allows to deploy a new SQL VM with Microsoft SQL Server 2019 (Developer edition) in Yandex.Cloud and connect as an Azure Arc-enabled SQL server resource.
+This repository contains an example that allows to deploy a new SQL VM with Microsoft SQL Server 2019 (Developer edition) in CloudIL and connect as an Azure Arc-enabled SQL server resource.
 
-By the end of this example, you will have a Yandex.Cloud Windows Server 2019 VM with SQL Server 2019, projected as an Azure Arc-enabled SQL server and a running SQL assessment with data injected to Azure Log Analytics workspace.
+By the end of this example, you will have a CloudIL Windows Server 2019 VM with SQL Server 2019, projected as an Azure Arc-enabled SQL server and a running SQL assessment with data injected to Azure Log Analytics workspace.
 
 <br/>
-<img src="images/yc-azure-arc-sql.jpg?raw=true" width="800px" alt="Yandex.Cloud VM with SQL and Azure Arc" title="Yandex.Cloud VM with SQL and Azure Arc">
+<img src="images/yc-azure-arc-sql.jpg?raw=true" width="800px" alt="CloudIL VM with SQL and Azure Arc" title="CloudIL VM with SQL and Azure Arc">
 <br/><br/>
 
 
@@ -20,7 +20,7 @@ By the end of this example, you will have a Yandex.Cloud Windows Server 2019 VM 
 
 The list of prerequisites required to configure Azure Arc connectivity and GitOps includes:
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-- [YC CLI](https://cloud.yandex.com/en-ru/docs/cli/operations/install-cli)
+- [YC CLI](https://cloudil.co.il/docs/cli/operations/install-cli)
 - [Terraform client](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 
@@ -60,7 +60,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/SUBSCRIPT
 
 <br/>
 
-### Yandex.Cloud authentication
+### CloudIL authentication
 
 The process of setting up authentication is described below:
 
@@ -106,7 +106,7 @@ Terraform module produces the following results:
 
 <br/>
 
-### Yandex.Cloud provider
+### Yandex provider
 
 Either Oauth token or service account IAM token key file must be used for authentication.
 Please select the suitable option in `providers.tf` file (uncomment one option and un-comment the other).
@@ -136,8 +136,8 @@ az_subscription_id = "00000000-0000-0000-0000-000000000000"
 vm_admin_user = "Administrator"
 vm_admin_password = "AzureArcDemoPassw0rd!"
 
-yc_folder_id = "b1g00000000000000000"
-yc_cloud_id = "b1g00000000000000000"
+il_folder_id = "b1g00000000000000000"
+il_cloud_id = "b1g00000000000000000"
 ```
 
 Process of obtaining this information is described in the [Prerequisites](#prerequisites) section.
@@ -145,7 +145,7 @@ Keep in mind that `az_service_principal_secret` should be mapped with the `passw
 
 In case of Oauth token authentication, the following line containing Oauth token, should be added to the `private.auto.tfvars` file:
 ```
-yc_token           = "OAUTH_TOKEN"
+il_token           = "OAUTH_TOKEN"
 ```
 
 <br/>
@@ -162,14 +162,14 @@ Apply the Terraform configuration:
 terraform apply
 ```
 
-As a result, the new VM will be created in Yandex.Cloud, Azure resource group will be created, and PowerShell scripts will be generated in the `scripts` sub-folder. The scripts will be transferred to the VM. 
+As a result, the new VM will be created in CloudIL, Azure resource group will be created, and PowerShell scripts will be generated in the `scripts` sub-folder. The scripts will be transferred to the VM. 
 
 
 <br/>
 
 ## Post-installation tasks and scripts
 
-After Terraform module deployment, please login to the VM with the username and password defined in `private.auto.tfvars` file [via RDP](https://cloud.yandex.com/en/docs/compute/operations/vm-connect/rdp). After the login, the PowerShell script will start to prepare the VM:
+After Terraform module deployment, please login to the VM with the username and password defined in `private.auto.tfvars` file [via RDP](https://cloudil.co.il/docs/compute/operations/vm-connect/rdp). After the login, the PowerShell script will start to prepare the VM:
 
 1. SQL Server Developer Edition will be installed.
 2. Sample database will be restored.
@@ -183,7 +183,7 @@ After Terraform module deployment, please login to the VM with the username and 
 
 ### Results
 
-Yandex.Cloud VM with SQL as seen in the Azure resource group:
+CloudIL VM with SQL as seen in the Azure resource group:
 
 <img src="images/yc-azure-arc-sql-rg.jpg?raw=true" alt="Resource group in Azure" title="Resource group in Azure">
 <br/>
@@ -211,7 +211,7 @@ Clicking the `Download configuration script` will simply send a REST API call to
 
 ## Destroying
 
-Run the following command to destroy created resources in Azure and Yandex.Cloud:
+Run the following command to destroy created resources in Azure and CloudIL:
 ```
 terraform destroy
 ```

@@ -19,7 +19,7 @@ data "template_file" "vpn_cloud_init" {
     ssh_key     = file(var.public_key_path)
     left_id     = data.yandex_vpc_address.vpn_address.external_ipv4_address.0.address
     right      = data.azurerm_public_ip.azure-vpn-ip.ip_address
-    leftsubnet  = var.yandex_subnet_range
+    leftsubnet  = var.cloudil_subnet_range
     rightsubnet = flatten(var.azure_subnet_range) [0]
     psk         = yandex_kms_secret_ciphertext.psk-encrypted.ciphertext
   }
@@ -56,7 +56,7 @@ resource "yandex_compute_instance" "vpn_vm" {
 
   network_interface {
     subnet_id          = yandex_vpc_subnet.this.id
-    ip_address         = cidrhost(var.yandex_subnet_range, 10)
+    ip_address         = cidrhost(var.cloudil_subnet_range, 10)
     nat                = true
     nat_ip_address     = data.yandex_vpc_address.vpn_address.external_ipv4_address.0.address
     security_group_ids = [yandex_vpc_security_group.this.id]

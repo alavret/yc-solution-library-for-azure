@@ -9,22 +9,22 @@ resource "random_string" "project" {
 
 ### Yandex.Cloud
 # VPC
-resource "yandex_vpc_network" "yc_vpc" {
+resource "yandex_vpc_network" "il_vpc" {
   name            = "sql-arc-${random_string.project.result}"
   description     = "VPC for Arc-enabled SQL VM"
 }
 
-resource "yandex_vpc_subnet" "yc_subnet" {
+resource "yandex_vpc_subnet" "il_subnet" {
   name       = "sql-arc-subnet-${random_string.project.result}"
-  zone       = var.yc_zone
-  network_id = yandex_vpc_network.yc_vpc.id
+  zone       = var.il_zone
+  network_id = yandex_vpc_network.il_vpc.id
   v4_cidr_blocks = ["10.200.200.0/24"]
 }
 # Security Group
-resource "yandex_vpc_security_group" "yc_sg" {
+resource "yandex_vpc_security_group" "il_sg" {
   name        = "sql-arc-sg-${random_string.project.result}"
   description = "SQL Arc-enabled VM Security Group"
-  network_id  = yandex_vpc_network.yc_vpc.id
+  network_id  = yandex_vpc_network.il_vpc.id
 
   ingress {
     protocol       = "TCP"
@@ -51,7 +51,7 @@ resource "yandex_vpc_security_group" "yc_sg" {
 }
 
 # VM
-resource "yandex_compute_instance" "yc_vm" {
+resource "yandex_compute_instance" "il_vm" {
   name        = var.vm_name
   platform_id = "standard-v3"
 
@@ -62,16 +62,16 @@ resource "yandex_compute_instance" "yc_vm" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd803730irifbddaarmi" # Windows Server 2019
+      image_id = "alkt03uv4c4to3jlt059" # Windows Server 2022
       size     = 100
       type     = "network-hdd"
     }
   }
 
   network_interface {
-    subnet_id          = "${yandex_vpc_subnet.yc_subnet.id}"
+    subnet_id          = "${yandex_vpc_subnet.il_subnet.id}"
     nat                = true
-    security_group_ids = [yandex_vpc_security_group.yc_sg.id]
+    security_group_ids = [yandex_vpc_security_group.il_sg.id]
   }
 
   metadata = {

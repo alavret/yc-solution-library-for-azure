@@ -16,26 +16,61 @@ variable "labels" {
 }
 
 #-------------------------------
-# Yandex Variables
+# CloudIL Variables
 #-------------------------------
+variable "il_folder_id" {
+  description = "CloudIL folder id"
+  type        = string
+}
+
+variable "il_cloud_id" {
+  description = "CloudIL cloud id"
+  type        = string
+}
+
 variable "zone" {
-  description = "Yandex Cloud default Zone for provisoned resources"
-  default     = "ru-central1-a"
+  description = "CloudIL default Zone for provisoned resources"
+  default     = "il1-a"
 }
 
 
-variable "yandex_vpc_id" {
-  description = "ID of the Yandex VPC where VPN instance will be created"
+variable "cloudil_vpc_id" {
+  description = "ID of the CloudIL VPC where VPN instance will be created"
 }
 
-variable "yandex_subnet_range" {
-  description = "Describe list of subnets that you wish to connect to the VPN from the Yandex.Cloud side"
+variable "cloudil_subnet_range" {
+  description = "Describe list of subnets that you wish to connect to the VPN from the CloudIL side"
   default = "192.168.0.0/24"
+}
+
+variable "il_provider_key_file" {
+  description = "CloudIL provider key file for authentication"
+  default = "./key.json"
 }
 
 #-------------------------------
 # Azure Variables
 #-------------------------------
+
+variable "az_subscription_id" {
+  description = "Azure subscription ID"
+  type        = string
+}
+
+variable "az_service_principal_app_id" {
+  description = "Azure service principal App ID"
+  type        = string
+}
+
+variable "az_service_principal_secret" {
+  description = "Azure service principal App Password"
+  type        = string
+}
+
+variable "az_service_principal_tenant_id" {
+  description = "Azure Tenant ID"
+  type        = string
+}
 
 variable "location" {
   description = "azure location to create resources in"
