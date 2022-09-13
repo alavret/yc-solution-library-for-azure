@@ -1,38 +1,38 @@
-# Yandex.Cloud variables
-variable "yc_folder_id" {
-  description = "Yandex.Cloud folder id"
+# CloudIL variables
+variable "il_folder_id" {
+  description = "CloudIL folder id"
   type        = string
 }
 
-variable "yc_cloud_id" {
-  description = "Yandex.Cloud cloud id"
+variable "il_cloud_id" {
+  description = "CloudIL cloud id"
   type        = string
 }
 
-variable "yc_zone" {
-  description = "Yandex.Cloud region"
+variable "il_zone" {
+  description = "CloudIL region"
   type        = string
-  default     = "ru-central1-a"
+  default     = "ril1-a"
 }
 
-variable "yc_provider_key_file" {
-  description = "Yandex.Cloud provider key file for authentication"
+variable "il_provider_key_file" {
+  description = "CloudIL provider key file for authentication"
   default = "./key.json"
 
   # See documentation in the link below on how to create key.json service account file
-  # https://cloud.yandex.com/en-ru/docs/iam/operations/iam-token/create-for-sa#keys-create
+  # https://cloudil.co.il/docs/cli/operations/authentication/service-accounth
 }
 
-variable "yc_token" {
-  description = "Yandex.Cloud authentication token"
+variable "il_token" {
+  description = "CloudIL authentication token"
   default = null
   
   # See documentation in the link below on how to obtain Oauth token for authentication
-  # https://cloud.yandex.com/en-ru/docs/iam/concepts/authorization/oauth-token
+  # https://cloudil.co.il/docs/cli/operations/authentication/user
 }
 
-variable "yc_existing_k8s_cluster_name" {
-  description = "If Kubernetes cluster already exists in YC, please input cluster name"
+variable "il_existing_k8s_cluster_name" {
+  description = "If Kubernetes cluster already exists in IL, please input cluster name"
   default     = ""
 }
 

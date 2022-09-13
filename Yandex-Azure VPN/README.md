@@ -1,17 +1,17 @@
 # Setting up a VPN between Azure VNET and Yandex VPC
 
 ## Overview and target scenario
-If you need to deploy a Site-to-Site VPN connection between Yandex.Cloud and Microsoft Azure, you can use this example and module to set it up.
+If you need to deploy a Site-to-Site VPN connection between CloudIL and Microsoft Azure, you can use this example and module to set it up.
 
 ## Prerequisites
 
 The list of prerequisites required to configure VPN Scenario: 
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-- [YC CLI](https://cloud.yandex.com/en-ru/docs/cli/operations/install-cli)
+- [YC CLI](https://cloudil.co.il/docs/cli/operations/install-cli)
 - [Terraform client](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
 ## Yandex СLI Installation
-To automate Yandex.Cloud credentials provisioning (iam-token) install YC-CLI using the following guide [YC CLI](https://cloud.yandex.com/docs/cli/quickstart)
+To automate CloudIL credentials provisioning (iam-token) install YC-CLI using the following guide [YC CLI](https://cloudil.co.il/docs/cli/operations/install-cli)
 
 
 ## Authorize Yandex Cloud Credentials for Provider:
@@ -67,15 +67,15 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/SUBSCRIPT
 
 #### Example of usage
 ```HCL
-module "azure-yandex-vpn" {
+module "azure-cloudil-vpn" {
 source = "../modules/vpn"
 location = "westeurope"
 rgname = "my_azure_rg"
-yandex_vpc_id = "enpki4ukxxxxxxxxxxx"
+cloudil_vpc_id = "enpki4ukxxxxxxxxxxx"
 azure_vnet_name = "vpn_test_vnet"
 public_key_path = "~/.ssh/id_rsa.pub"
-zone = "ru-central1-a"
-yandex_subnet_range = "192.168.0.0/24"
+zone = "il1-a"
+cloudil_subnet_range = "192.168.0.0/24"
 azure_subnet_range = ["10.151.0.0/24"]
 azure_gateway_subnet_range = ["10.0.255.0/24"]
 ```
