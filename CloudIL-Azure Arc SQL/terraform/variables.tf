@@ -1,4 +1,4 @@
-# Yandex.Cloud variables
+# CLoudIL variables
 variable "il_folder_id" {
   description = "CloudIL folder id"
   type        = string
@@ -20,7 +20,7 @@ variable "il_provider_key_file" {
   default = "./key.json"
 
   # See documentation in the link below on how to create key.json service account file
-  # https://cloud.yandex.com/en-ru/docs/iam/operations/iam-token/create-for-sa#keys-create
+  # https://cloudil.co.il/docs/cli/operations/authentication/service-account
 }
 
 variable "il_token" {
@@ -28,7 +28,7 @@ variable "il_token" {
   default = null
   
   # See documentation in the link below on how to obtain Oauth token for authentication
-  # https://cloud.yandex.com/en-ru/docs/iam/concepts/authorization/oauth-token
+  # https://cloudil.co.il/docs/cli/operations/authentication/user
 }
 
 variable "vm_admin_user" {

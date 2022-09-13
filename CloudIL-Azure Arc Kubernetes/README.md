@@ -223,11 +223,11 @@ kubectl get nodes
 
 <br/>
 
-### az_yc_arc_connect_script.sh
+### az_il_arc_connect_script.sh
 
-Run the `az_yc_arc_connect_script.sh` script located in `scripts` folder:
+Run the `az_il_arc_connect_script.sh` script located in `scripts` folder:
 ```
-./az_yc_arc_connect_script.sh
+./az_il_arc_connect_script.sh
 ```
 
 This script is pre-filled with the data from Terraform module and can be run as it is.
@@ -256,11 +256,11 @@ GitOps example in this solution deploys application called `hello-app` in the Ar
 
 <br/>
 
-### az_yc_arc_gitops_script.sh
+### az_il_arc_gitops_script.sh
 
-Run the `az_yc_arc_gitops_script.sh` script located in `scripts` folder:
+Run the `az_il_arc_gitops_script.sh` script located in `scripts` folder:
 ```
-./az_yc_arc_gitops_script.sh
+./az_il_arc_gitops_script.sh
 ```
 
 This script is pre-filled with the data from Terraform module and can be run as it is.
