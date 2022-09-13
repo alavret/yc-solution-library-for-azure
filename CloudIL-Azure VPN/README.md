@@ -1,4 +1,4 @@
-# Setting up a VPN between Azure VNET and Yandex VPC
+# Setting up a VPN between Azure VNET and CloudIL VPC
 
 ## Overview and target scenario
 If you need to deploy a Site-to-Site VPN connection between CloudIL and Microsoft Azure, you can use this example and module to set it up.
@@ -10,7 +10,7 @@ The list of prerequisites required to configure VPN Scenario:
 - [YC CLI](https://cloudil.co.il/docs/cli/operations/install-cli)
 - [Terraform client](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
-## Yandex СLI Installation
+## CloudIL СLI Installation
 To automate CloudIL credentials provisioning (iam-token) install YC-CLI using the following guide [YC CLI](https://cloudil.co.il/docs/cli/operations/install-cli)
 
 
