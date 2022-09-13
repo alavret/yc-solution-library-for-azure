@@ -1,5 +1,5 @@
 
-# Yandex.Cloud Solution Library for Azure
+# CloudIL Solution Library for Azure
 
 This repository contains a number of building blocks that will help developers and DevOps engineers build hybrid solutions between Yandex and Azure clouds. We tried to identify the most common tasks that developers encounter while architecting or developing solutions, described the best practices, and provided examples of automation.
 
@@ -23,9 +23,9 @@ This is an example of organization with several servers deployed in multiple loc
 [Azure Arc-enabled servers](https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview) enables you to manage your Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provider. This management experience is designed to be consistent with how you manage native Azure virtual machines. When a hybrid machine is connected to Azure, it becomes a connected machine and is treated as a resource in Azure, so you can benefit from standard Azure constructs, such as Azure Policy and applying tags. 
 
 Examples to help build this architecture:
-* [Azure Arc-enabled Yandex.Cloud virtual machines]() (in development)
+* [Azure Arc-enabled CloudIL virtual machines]() (in development)
 * [Azure Arc-enabled SQL server](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20SQL)
-* [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
+* [Setting up federation in CloudIL through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
 ### At-scale multi-cloud Kubernetes app management
@@ -36,8 +36,8 @@ Here is an organization which have several branches and have in-office applicati
 This is where Azure Arc-enabled Kubernetes comes into play. You can project the Kubernetes clusters to Azure, so you can organize and view all your clusters in Azure (similar to Azure Arc-enabled servers) but you can also configure them uniformly, called zero touch configuration. This practice is called GitOps, which is a Kubernetes operating model. In GitOps, the configurations are declared and stored in a Git repo and our Arc agents running on the cluster continuously monitor this repo for updates or changes and automatically pulls down these changes to the cluster.
 
 Examples to help build this architecture:
-* [Azure Arc-enabled Yandex.Cloud Managed Kubernetes Cluster](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20Kubernetes)
-* [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
+* [Azure Arc-enabled CloudIL Managed Kubernetes Cluster](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20Kubernetes)
+* [Setting up federation in CloudIL through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
 ### Run data and application services anywhere
@@ -53,7 +53,7 @@ You can also run [App Service, Functions, and Logic Apps](https://docs.microsoft
 Examples to help build this architecture:
 * [Azure Arc-enabled data services]() (in development)
 * [Azure Arc-enabled app services - preview]() (in development)
-* [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
+* [Setting up federation in CloudIL through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
 
@@ -65,22 +65,22 @@ Complex nature of geographically diverse customer base, government regulations a
 
 Examples to help build this architecture:
 * [Multi-Cloud Storage with Microsoft Azure and Yandex Cloud](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Flexify.io%20Multi%20Cloud%20Storage)
-* [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
+* [Setting up federation in CloudIL through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 * [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 
 
 ## Technical implementation of common scenarios
 
 Following are links on all technical scenarios mentioned above in the use cases:
-#### 1. [Setting up federation in Yandex.Cloud through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
+#### 1. [Setting up federation in CloudIL through Azure AD](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20AD%20Federation)
 #### 2. [Setting up a VPN between Azure VNET and Yandex VPC](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20VPN)
 #### 3. [Multi-Cloud Storage with Microsoft Azure and Yandex Cloud](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Flexify.io%20Multi%20Cloud%20Storage)
 #### 4. [Yandex - Azure Interconnect](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Interconnect)
-#### 5. [Azure Arc-enabled Yandex.Cloud virtual machines]() (in development)
+#### 5. [Azure Arc-enabled CloudIL virtual machines]() (in development)
 Azure Arc-enabled servers enables you to manage your Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provider. This management experience is designed to be consistent with how you manage native Azure virtual machines.
 #### 6. [Azure Arc-enabled SQL server](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20SQL)
 You can enable SQL Server on Azure Arc-enabled servers. It extends Azure services to SQL Server instances hosted outside of Azure; in your datacenter, on the edge, or in a multi-cloud environment.
-#### 7. [Azure Arc-enabled Yandex.Cloud Managed Kubernetes Cluster](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20Kubernetes)
+#### 7. [Azure Arc-enabled CloudIL Managed Kubernetes Cluster](https://github.com/yandex-cloud/yc-solution-library-for-azure/tree/main/Yandex-Azure%20Arc%20Kubernetes)
 Azure Arc enabled Kubernetes manages cluster configuration and application deployment on any Kubernetes cluster. It adopts a GitOps methodology, so customers define their applications and cluster configurations in source control, in this case, Git. Azure Arc-enabled Kubernetes works with any Cloud Native Computing Foundation (CNCF) certified Kubernetes clusters.
 #### 8. [Azure Arc-enabled data services]() (in development)
 Azure Arc makes it possible to run Azure data services on-premises, at the edge, and in public clouds using Kubernetes and the infrastructure of your choice.

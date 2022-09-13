@@ -12,7 +12,7 @@ variable "il_cloud_id" {
 variable "il_zone" {
   description = "CloudIL region"
   type        = string
-  default     = "ril1-a"
+  default     = "il1-a"
 }
 
 variable "il_provider_key_file" {
@@ -46,7 +46,7 @@ variable "az_location" {
 variable "az_resource_group_name" {
   description = "Azure resource group"
   type        = string
-  default     = "azure-arc-demo"
+  default     = "RG-azure-arc"
 }
 
 variable "az_arc_cluster_name" {
