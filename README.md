@@ -18,7 +18,7 @@ Many architectures that you will see below are built upon a powerful and compreh
 ### Manage and govern multi-cloud environments with a single control plane
 This is an example of organization with several servers deployed in multiple locations. It is also using DevOps practices which result in an unknown number of servers that are connected to the corporate networks but do not conform to identity and governance requirements. This organization needs to gain some control of their environment and ensure the compliance requirements are met for audit purposes.
 
-![image](./pics/img3.png)
+![image](./pics/img3.jpg)
 
 [Azure Arc-enabled servers](https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview) enables you to manage your Windows and Linux physical servers and virtual machines hosted outside of Azure, on your corporate network, or other cloud provider. This management experience is designed to be consistent with how you manage native Azure virtual machines. When a hybrid machine is connected to Azure, it becomes a connected machine and is treated as a resource in Azure, so you can benefit from standard Azure constructs, such as Azure Policy and applying tags. 
 
@@ -43,7 +43,7 @@ Examples to help build this architecture:
 One company wants to build new applications or modernize existing applications and infrastructure so they can capture and analyze data at remote locations worldwide and deliver onsite, real-time insights with no latency.
 
 
-![image](./pics/img5_ver2.png)
+![image](./pics/img5_ver2.jpg)
 
 Azure Arc makes it possible to run [Azure data services](https://docs.microsoft.com/en-us/azure/azure-arc/data/overview) on any Kubernetes environment as if it runs in Azure (specifically Azure SQL Managed Instance and Azure Database for PostgreSQL Hyperscale, with benefits such as upgrades, updates, security, and monitoring). Use elastic scale and apply updates without any application downtime, even without continuous connection to Azure.
  
@@ -52,11 +52,6 @@ You can also run [App Service, Functions, and Logic Apps](https://docs.microsoft
 Examples to help build this architecture:
 * [Setting up federation in CloudIL through Azure AD](/CloudIL-Azure%20AD%20Federation/)
 * [Setting up a VPN between Azure VNET and CloudIL VPC](/CloudIL-Azure%20VPN/)
-
-
-Examples to help build this architecture:
-* [Setting up federation in CloudIL through Azure AD](/CloudIL-Azure%20AD%20Federation/)
-* [Setting up a VPN between Azure VNET and ColudIL VPC](/CloudIL-Azure%20VPN/)
 
 
 ## Technical implementation of common scenarios
